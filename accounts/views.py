@@ -14,7 +14,7 @@ def login_user(request):
 
         if user is not None:
             login(request, user)
-            redirect_url = request.GET.get('next', 'home')
+            redirect_url = request.GET.get('next', 'booklist')
             return redirect(redirect_url)
         else:
             messages.error(request, "Username Or Password is incorrect!",
